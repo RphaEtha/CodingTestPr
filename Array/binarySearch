@@ -1,9 +1,0 @@
-요약
-이번 챕터에서는 인터뷰 문제 중 가장 간단하면서도 중요한 Array의 Search인 binarySearch에 대해 배우게 됩니다.
-하이라이트
-정렬된 배열에서 index 범위의 제한을 통하여, left(범위 최솟값 index) right(범위 최댓값 index)를 통하여 pivot을 설정하고, pivot 위치의 값과 찾으려는 값을 비교하여 범위를 조절하며 찾아가는 과정.
-불릿 포인트
-💡 left는 주어진 범위에서 최소값의 Index, right는 최댓값의 Index
-💡 Pivot은 범위를 결정하기 위한 기준이 되는 인덱스로 범위의 최대 최소의 중간의 위치의 index이다. (left + right) / 2 
-💡 pivot 위치(index)의 값보다 만약 값이 크다면, pivot + 1 ~ right의 범위로 Search할 부분을 다시 구분. (작다면 반대)
-💡 만약, Array에 없는 수라면, left와 right가 위치가 바뀌게 될 것이다.
