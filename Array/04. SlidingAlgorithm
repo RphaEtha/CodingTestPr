@@ -1,0 +1,50 @@
+Array 문제의 접근 방법중 하나인 ‘슬라이딩’이라는 개념에 대해 말해보려한다.
+
+Find Pivot Index
+피봇을 찾으라는 말이다. 피봇이란 피봇 왼쪽에 있는 숫자들의 합과 오른쪽에 있는 숫자들의 합이 같을때 그 숫자를 피봇이라고 하고 그 피봇의 index를 리턴하면 답이다.
+
+
+처음에 배열 원소의 총합을 구한다음,  0번째 인덱스를 시작으로 pivot이라고 가정해서 진행시켜.
+그러면, 0번째 인덱스의 값을 빼주고 피봇 왼쪽의 값들의 합과 비교해. (처음은 당연히 0이겠지.)
+
+다음으로 두 번째 숫자를 pivot으로 잡아줘 그래서 오른쪽의 경우 0번째 인덱스의 값을 뺀 갱신된 총합의 값에서 다시 한 번 두 번째 숫자의 값을 빼줘. 그리고 과거의 피봇 넘버에 해당하는 값을 피봇좌측의 총합으로 값을 더해줘
+
+다시말해서 솔루션은
+피봇이 한 칸씩 움직일 때마다 rightSum에서 해당 숫자를 한 번씩 빼주고, leftSum에 한 턴전의 pivot을 더해주면 되는거지. 그리고 매번 rightSum과 leftSum이 더해질때마다 비교해주면 pivot index를 찾을 수 있는거지.
+
+int pivotIndex(int[] nums)
+{ 	int sum = accumulation(nums);
+	int leftSum = 0;
+	int rightSum = sum;
+
+	int pastPivotNum = 0;
+	for(int idx = 0; idx < nums.length; idx++)
+	{
+		int num = nums[idx];
+		rightSum = rightSum - num;
+		leftSum = leftSum + pastPivotNum;
+
+		if(leftSum == rightSum)
+		{
+			return idx;
+		}
+		pastPivotNum = num;
+	}
+	return -1;
+}
+
+슬라이딩 알고리즘을 적용할 수 있는 가장 중요한 근거
+모든 숫자가 양수일 경우에만 알고리즘을 사용할 수 있다.
+
+----------------------------------------------------------------------------------------
+
+추가로, 슬라이딩 알고리즘을 통해서 풀 수 있는 문제. 개인적으로 생각해보고 구현해보길 바란다.
+정수 Array가 주어진 가운데, subArray를 구하는 문제. subArray는 Array의 내부 값들의 합과 같아야한다.
+그리고 가장 적은 원소의 개수를 가지고 있는 SubArray의 원소의 개수를 구하면 된다.
+
+Input: s = 7, nums = [2, 3, 1, 2, 4, 3]
+output: 2
+Explanation: the subarray [4, 3] has the minimal length under the problem constraint.
+
+
+
