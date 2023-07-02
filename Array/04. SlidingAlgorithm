@@ -13,7 +13,8 @@ Find Pivot Index
 피봇이 한 칸씩 움직일 때마다 rightSum에서 해당 숫자를 한 번씩 빼주고, leftSum에 한 턴전의 pivot을 더해주면 되는거지. 그리고 매번 rightSum과 leftSum이 더해질때마다 비교해주면 pivot index를 찾을 수 있는거지.
 
 int pivotIndex(int[] nums)
-{ 	int sum = accumulation(nums);
+{ 	
+	int sum = accumulation(nums);
 	int leftSum = 0;
 	int rightSum = sum;
 
