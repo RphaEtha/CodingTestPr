@@ -27,7 +27,7 @@ int search(int[] nums, int target)
 		}	
 		else
 		{
-			right + pivot  - 1; 
+			right = pivot  - 1; 
 		}
 	}
 	return -1;
