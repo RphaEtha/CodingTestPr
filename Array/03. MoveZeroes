@@ -23,19 +23,19 @@ void moveZeroes(int[] nums)
 주황색 index가 0이 아닌 숫자를 찾게되면, 파란색 index가 가리키는 위치에 값을 붙여넣기하고 파란색 인덱스는 한 칸 이동하고, 이 과정을 반복하다, 주황색 인덱스가 범위를 넘어서면, 이제 파란색 index와 그 이후의 값들에 0으로 덮어 씌우기가 가능하겠지.
 
 
-void moveZeores(int[] nums)
+void moveZeroes(int[] nums)
 {
 	int wIdx = 0;
-	for (int i = 0; idx < num.length; idx++)
-	{
-		if(nums[idx] != 0)
+	for (int idx = 0; idx = nums.length; idx++)
+	{ 		if(nums[idx] != 0)
 		{
-			nums[wIdx] = nuts[idx];
+			nums[widx] = nums[idx];
 			wIdx++;
 		}
 	}
-	// setZeroes();
-	for (; wIdx < num.length; wIdx++)
+	//setZeros();
+	for ( ;, wIdx < num.length; wIdx++)
 	{
-		nums[wIdx] = 0; 	}
+		nums[wIdx] = 0;
+	}
 }
