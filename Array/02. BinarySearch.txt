@@ -7,3 +7,28 @@
 💡 Pivot은 범위를 결정하기 위한 기준이 되는 인덱스로 범위의 최대 최소의 중간의 위치의 index이다. (left + right) / 2 
 💡 pivot 위치(index)의 값보다 만약 값이 크다면, pivot + 1 ~ right의 범위로 Search할 부분을 다시 구분. (작다면 반대)
 💡 만약, Array에 없는 수라면, left와 right가 위치가 바뀌게 될 것이다.
+
+
+int search(int[] nums, int target) 
+{
+	int left = 0;
+	int right = num.length - 1;
+
+	while (left <= right)
+	{
+		int pivot = (left + right) / 2
+		if (nums[pivot] == target)
+		{
+			return pivot;
+		}
+		else if (nums[pivot] < target)
+		{
+			left = pivot + 1;
+		}	
+		else
+		{
+			right + pivot  - 1; 
+		}
+	}
+	return -1;
+}
